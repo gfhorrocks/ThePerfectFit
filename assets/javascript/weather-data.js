@@ -37,7 +37,6 @@ $(document).ready(function () {
                     humidity = "humidity " + response.list[days].main.humidity + "%";
                     temp = "temp " + response.list[days].main.temp + " F";
                     description = response.list[days].weather[0].description;
-                    
                     date = response.list[days].dt_txt;
                     var newRow = $("<tr>").append(
                         $("<td>").text(moment(date).format('dddd')),
@@ -91,7 +90,7 @@ $(document).ready(function () {
                         $("<td>").text(moment(date).format('dddd')),
                         $("<td>").text(temp),
                         $("<td>").text(humidity),
-                        $("<td>").text(description),
+                        $("<td>").text(description)
                         );
                         $("#weather-table2 > tbody").append(newRow);
             };
