@@ -117,3 +117,7 @@ body{
 div{
     border-radius: 32px;
 }
+
+#weatherData{
+    overflow: scroll;
+}

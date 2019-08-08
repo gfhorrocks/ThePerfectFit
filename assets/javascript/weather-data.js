@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var apiKey = "bf0fe2b0776e786b0b03723a094e6d31";
-    var wind;
     var temp;
     var humidity;
     var description;
@@ -38,14 +37,13 @@ $(document).ready(function () {
                     humidity = "humidity " + response.list[days].main.humidity + "%";
                     temp = "temp " + response.list[days].main.temp + " F";
                     description = response.list[days].weather[0].description;
-                    wind = "wind speed " + response.list[days].wind.speed + " MPH";
+                    
                     date = response.list[days].dt_txt;
                     var newRow = $("<tr>").append(
                         $("<td>").text(moment(date).format('dddd')),
                         $("<td>").text(temp),
                         $("<td>").text(humidity),
-                        $("<td>").text(description),
-                        $("<td>").text(wind),
+                        $("<td>").text(description)
                         );
                         $("#weather-table > tbody").append(newRow);
                 };
@@ -88,14 +86,12 @@ $(document).ready(function () {
                     humidity = "humidity " + response.list[days].main.humidity + "%";
                     temp = "temp " + response.list[days].main.temp + " F";
                     description = response.list[days].weather[0].description;
-                    wind = "wind speed " + response.list[days].wind.speed + " MPH";
                     date = response.list[days].dt_txt;
                     var newRow = $("<tr>").append(
                         $("<td>").text(moment(date).format('dddd')),
                         $("<td>").text(temp),
                         $("<td>").text(humidity),
                         $("<td>").text(description),
-                        $("<td>").text(wind),
                         );
                         $("#weather-table2 > tbody").append(newRow);
             };
